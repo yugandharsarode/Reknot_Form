@@ -17,9 +17,14 @@ class RegisterController extends Controller
         $request->validate(
             [
                 'name' => 'required',
+                'college' => 'required',
                 'email' => 'required|email',
                 'phone' => 'required|numeric|min:10',
+                'college_id' => 'required',
                 'id_pic' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                'percentage' => 'required|numeric',
+                'pc' => 'required',
+                'address' => 'required'
             ]
         );
 
