@@ -14,7 +14,16 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
-       
+        $request->validate(
+            [
+                'name' => 'required',
+                'email' => 'email',
+                'phone' => 'required|numeric|min:10',
+                'id_pic' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            ]
+        );
+        
+
         $intern = new Intern;
         $intern->name = $request['name'];
         $intern->college = $request['college'];
