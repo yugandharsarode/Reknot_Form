@@ -27,62 +27,107 @@
   <div class="col-md-12">
     <div class="form-group mb-3">
       <label for="">Name</label>
-      <input type="text" name="name" class="form-control"  placeholder="Enter your Name" required>
+      <input type="text" name="name" class="form-control"  placeholder="Enter your Name" value="{{old('name')}}" >
+      <span class="text-danger">
+        @error('name')
+          {{$message}}
+        @enderror
+      </span>
     </div>
   </div>
 
   <div class="col-md-12">
     <div class="form-group mb-3">
       <label for=""> College Name</label>
-      <input type="text" name="college" class="form-control"  placeholder="Enter your College Name" required>
+      <input type="text" name="college" class="form-control"  placeholder="Enter your College Name" value="{{old('college')}}" >
+      <span class="text-danger">
+        @error('college')
+          {{$message}}
+        @enderror
+      </span>
     </div>
   </div>
 
   <div class="col-md-12">
     <div class="form-group mb-3">
       <label for=""> Email-Id</label>
-      <input type="email" name="email" class="form-control"  placeholder="Enter your Email-Id" required>
+      <input type="email" name="email" class="form-control"  placeholder="Enter your Email-Id" value="{{old('email')}}" >
+      <span class="text-danger">
+        @error('email')
+          {{$message}}
+        @enderror
+      </span>
     </div>
   </div> 
 
 <div class="col-md-6">
 <div class="form-group mb-3">
       <label for=""> Phone Number</label>
-      <input type="text" name="phone" class="form-control"  placeholder="Enter your Phone Number" required>
+      <input type="text" name="phone" class="form-control"  placeholder="Enter your Phone Number" value="{{old('phone')}}" >
+      <span class="text-danger">
+        @error('phone')
+          {{$message}}
+        @enderror
+      </span>
     </div>
   </div>
 
   <div class="col-md-6">
   <div class="form-group mb-3">
       <label for=""> College Id</label>
-      <input type="text" name="college_id" class="form-control"  placeholder="Enter your College Id" required>
+      <input type="text" name="college_id" class="form-control"  placeholder="Enter your College Id" value="{{old('college_id')}}" >
+      <span class="text-danger">
+        @error('college_id')
+          {{$message}}
+        @enderror
+      </span>
     </div>
   </div>
 
   <div class="col-md-12">
     <label for="">College Id Pic</label>
-    <input type="file" name="id_pic" class="form-control" required>
+    <input type="file" name="id_pic" class="form-control" >
+    <span class="text-danger">
+        @error('id_pic')
+          {{$message}}
+        @enderror
+      </span>
 </div>
 
 <div class="col-md-6">
 <div class="form-group mb-3">
       <label for=""> Percentage</label>
-      <input type="text" name="percentage" class="form-control"  placeholder="Enter your Percentage" required>
+      <input type="text" name="percentage" class="form-control"  placeholder="Enter your Percentage" value="{{old('percentage')}}" >
+      <span class="text-danger">
+        @error('percentage')
+          {{$message}}
+        @enderror
+      </span>
     </div>
   </div>
 
   <div class="col-md-6">
   <div class="form-group mb-3">
       <label for=""> Do you have your Own PC?</label><br>
-      <input type="radio" name="pc" value="Yes" required> Yes I have
+      <input type="radio" name="pc" value="Yes"> Yes I have
       <input type="radio" name="pc" value="No">No I don't have
+      <span class="text-danger">
+        @error('pc')
+          {{$message}}
+        @enderror
+      </span>
     </div>
 </div>
 
 <div class="col-md-12">
 <div class="form-group mb-3">
       <label for=""> Address</label>
-      <input type="text" name="address" class="form-control"  placeholder="Enter your Address" required>
+      <input type="text" name="address" class="form-control"  placeholder="Enter your Address" value="{{old('address')}}" >
+      <span class="text-danger">
+        @error('address')
+          {{$message}}
+        @enderror
+      </span>
     </div>
 </div>
 
