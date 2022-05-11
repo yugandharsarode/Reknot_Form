@@ -35,11 +35,12 @@ class RegisterController extends Controller
         $intern->email = $request['email'];
         $intern->phone = $request['phone'];
         $intern->college_id = $request['college_id'];
+        $img_name = $request['college_id'];
         if($request->hasfile('id_pic'))
         {
             $file = $request->file('id_pic');
             $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
+            $filename = $img_name.'.'.$extension;
             $file->move('uploads', $filename);
             $intern->id_pic = $filename;
         }
