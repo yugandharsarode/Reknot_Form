@@ -27,6 +27,8 @@
             <th>Percentage</th>
             <th>PC</th>
             <th>Address</th>
+            <th>Edit </th>
+            <th>Delete </th>
 
          <tbody>
             @foreach($interns as $intern)
@@ -43,7 +45,9 @@
                 <td>{{$intern->percentage}}</td>
                 <td>{{$intern->pc}}</td>
                 <td>{{$intern->address}}</td>
-                    
+                <td> <a href="#"><button class="btn btn-primary">Edit</button></a></td>
+                <td> <a href="#"><button class="btn btn-danger">Delete</button></a></td>
+
             </tr>
             @endforeach
          </tbody>
