@@ -19,3 +19,7 @@ Route::get('/index', [RegisterController::class, 'index']);
 Route::post('/index', [RegisterController::class, 'store']);
 
 Route::get('/display', [RegisterController::class, 'display']);
+
+Route::get('/edit_data/edit/{id}', [RegisterController::class, 'edit']);
+
+Route::post('/edit_data/update/{id}', [RegisterController::class, 'update']);

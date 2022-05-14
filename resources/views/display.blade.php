@@ -45,7 +45,7 @@
                 <td>{{$intern->percentage}}</td>
                 <td>{{$intern->pc}}</td>
                 <td>{{$intern->address}}</td>
-                <td> <a href="#"><button class="btn btn-primary">Edit</button></a></td>
+                <td> <a href="{{url('/edit_data/edit')}}/{{$intern->id}}"><button class="btn btn-primary">Edit</button></a></td>
                 <td> <a href="#"><button class="btn btn-danger">Delete</button></a></td>
 
             </tr>

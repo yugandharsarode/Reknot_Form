@@ -58,4 +58,44 @@ class RegisterController extends Controller
         return view('display')->with($data);
         
     }
+
+    public function edit($id)
+    {
+        $interns = Intern::find($id);
+        if(is_null($interns))
+        {
+            return view('/display');
+        }
+        else
+        {
+            $url = url('/edit_data/update')."/".$id;
+            $tittle = "Update your Data";
+            $data = compact('interns','url','tittle');
+            return view('edit_data')->with($data);               
+        }       
+    } 
+
+    public function update($id,Request $request)
+    {
+        $intern = Intern::find($id);
+        $intern->name = $request['name'];
+        $intern->college = $request['college'];
+        $intern->email = $request['email'];
+        $intern->phone = $request['phone'];
+        $intern->college_id = $request['college_id'];
+        $img_name = $request['college_id'];
+        if($request->hasfile('id_pic'))
+        {
+            $file = $request->file('id_pic');
+            $extension = $file->getClientOriginalExtension();
+            $filename = $img_name.'.'.$extension;
+            $file->move('uploads', $filename);
+            $intern->id_pic = $filename;
+        }
+        $intern->percentage = $request['percentage'];
+        $intern->pc = $request['pc'];
+        $intern->address = $request['address'];
+        $intern->save();
+        return redirect('/display');
+    }
 }
