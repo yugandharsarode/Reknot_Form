@@ -98,4 +98,10 @@ class RegisterController extends Controller
         $intern->save();
         return redirect('/display');
     }
+
+    public function delete($id)
+    {
+        $intern = Intern::find($id)->delete();
+        return redirect('display');
+    }
 }

@@ -23,3 +23,5 @@ Route::get('/display', [RegisterController::class, 'display']);
 Route::get('/edit_data/edit/{id}', [RegisterController::class, 'edit']);
 
 Route::post('/edit_data/update/{id}', [RegisterController::class, 'update']);
+
+Route::get('/index/delete/{id}', [RegisterController::class, 'delete']);
